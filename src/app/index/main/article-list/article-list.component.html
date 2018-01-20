@@ -1,0 +1,25 @@
+<lte-box title="文章" type="primary">
+  <div *ngFor="let article of pager?.content"
+       class="article-list-item">
+    <div class="list-item-title">
+      <p class="article-list-item-text">
+        <a (click)="goToDetail(article?.id)" class="list-item-title-a">{{article?.title}}</a>
+      </p>
+    </div>
+    <div class="article-list-item-info">
+      <div class="item-info-left">
+        <span>{{article?.nature | naturePipe}}</span>
+        <span>{{article?.createTime | date:'yyyy年MM月dd日 HH:mm:ss'}}</span>
+        <span>{{article?.status | articleStatusPipe}}</span>
+        <span><i class="fa fa-eye"></i> {{article?.viewCount || 0}}</span>
+        <span><i class="fa fa-comment"></i> {{article?.commentCount || 0}}</span>
+      </div>
+    </div>
+  </div>
+  <br>
+  <lte-pagination cssClass="no-margin pull-right"
+                  [total]="pager?.totalElements" [pageSize]="pager?.size" [(pageIndex)]="pager.number"
+                  (pageIndexChange)="pageChange($event)" [maxItems]="10"
+                  firstLink="首页" lastLink="尾页" preLink="前一页" nextLink="下一页">
+  </lte-pagination>
+</lte-box>

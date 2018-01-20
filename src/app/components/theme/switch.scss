@@ -1,0 +1,103 @@
+.lte-switch {
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+  line-height: 20px;
+  height: 20px;
+  vertical-align: middle
+}
+
+.lte-switch.is-disabled .lte-switch__core, .lte-switch.is-disabled .lte-switch__label {
+  cursor: not-allowed
+}
+
+.lte-switch__core, .lte-switch__label {
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: middle
+}
+
+.lte-switch__label {
+  -webkit-transition: .2s;
+  transition: .2s;
+  height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2d2f33
+}
+
+.lte-switch__label.is-active {
+  color: #409EFF
+}
+
+.lte-switch__lablte--left {
+  margin-right: 10px
+}
+
+.lte-switch__lablte--right {
+  margin-left: 10px
+}
+
+.lte-switch__label * {
+  line-height: 1;
+  font-size: 14px;
+  display: inline-block
+}
+
+.lte-switch__input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  margin: 0
+}
+
+.lte-switch__core {
+  margin: 0;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  border: 1px solid #d8dce5;
+  outline: 0;
+  border-radius: 10px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #d8dce5;
+  -webkit-transition: border-color .3s, background-color .3s;
+  transition: border-color .3s, background-color .3s
+}
+
+.lte-switch__core .lte-switch__button {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  border-radius: 100%;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s;
+  width: 16px;
+  height: 16px;
+  background-color: #fff
+}
+
+.lte-switch.is-checked .lte-switch__core {
+  border-color: #409EFF;
+  background-color: #409EFF
+}
+
+.lte-switch.is-disabled {
+  opacity: .6
+}
+
+.lte-switch--wide .lte-switch__label.lte-switch__lablte--left span {
+  left: 10px
+}
+
+.lte-switch--wide .lte-switch__label.lte-switch__lablte--right span {
+  right: 10px
+}
+
+.lte-switch .lablte-fade-enter, .lte-switch .lablte-fade-leave-active {
+  opacity: 0
+}

@@ -1,0 +1,30 @@
+<div class="box box-primary">
+  <div class="box-body">
+    <table class="table table-hover table-responsive">
+      <thead>
+      <tr>
+        <th style="width: 10px"><input [checked]="selectAll" (click)="clickCheckboxControl()" type="checkbox"></th>
+        <ng-container *ngFor="let column of columns">
+          <th>{{column}}</th>
+        </ng-container>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let menu of pager?.content">
+        <th><input [checked]="isChecked(menu[idField])" (click)="clickCheckboxItem(menu[idField])" type="checkbox"></th>
+        <ng-container *ngFor="let field of fields">
+          <td [ngClass]="{'active':menu?.active}">{{menu[field]}}</td>
+        </ng-container>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="showPagination" class="box-footer clearfix">
+    <lte-pagination cssClass="no-margin pull-right"
+                    [total]="pager?.totalElements" [pageSize]="pager?.size" [(pageIndex)]="pager.number"
+                    (pageIndexChange)="pageChange($event)" [maxItems]="10"
+                    firstLink="首页" lastLink="尾页" preLink="前一页" nextLink="下一页">
+    </lte-pagination>
+  </div>
+</div>
+

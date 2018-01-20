@@ -1,0 +1,99 @@
+<div class="login">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 col-xs12 col-xs-offset-0">
+      <div class="login-box-body">
+        <div class="register-box-body">
+          <p class="login-box-msg"><strong>Tmac</strong> 注册</p>
+          <form [formGroup]="form">
+            <div class="form-group has-feedback"
+                 [class.has-error]="form.controls.account.touched && form.controls.account.invalid">
+              <input minlength="6" maxlength="12" formControlName="account" type="text" class="form-control"
+                     placeholder="账号:英文、字母和数字组成，6-12位">
+              <span class="fa fa-user form-control-feedback"></span>
+              <lte-form-tooltip *ngIf="form.controls.account.touched && form.controls.account.hasError('required')">
+                账号不能为空
+              </lte-form-tooltip>
+              <lte-form-tooltip *ngIf="form.controls.account.touched && form.controls.account.hasError('formatValid')">
+                账号只能使用数字和英文
+              </lte-form-tooltip>
+              <lte-form-tooltip
+                *ngIf="form.controls.account.touched && form.controls.account.hasError('accountUnique')">
+                账号已存在
+              </lte-form-tooltip>
+              <lte-form-tooltip *ngIf="form.controls.account.touched && form.controls.account.hasError('minlength')">
+                账号只能是6位到12位之间
+              </lte-form-tooltip>
+            </div>
+            <div class="form-group has-feedback"
+                 [class.has-error]="form.controls.username.touched && form.controls.username.invalid">
+              <input maxlength="12" minlength="2" formControlName="username" type="text" class="form-control"
+                     placeholder="昵称:英文、字母、汉字和数字组成，2-12位">
+              <span class="fa fa-user-o form-control-feedback"></span>
+              <lte-form-tooltip *ngIf="form.controls.username.touched && form.controls.username.hasError('required')">
+                昵称不能为空
+              </lte-form-tooltip>
+              <lte-form-tooltip
+                *ngIf="form.controls.username.touched && form.controls.username.hasError('formatValid')">
+                昵称只能使用数字、英文和汉字
+              </lte-form-tooltip>
+              <lte-form-tooltip *ngIf="form.controls.username.touched && form.controls.username.hasError('minlength')">
+                昵称只能是2位到12位之间
+              </lte-form-tooltip>
+            </div>
+            <div class="form-group has-feedback"
+                 [class.has-error]="form.controls.email.touched && form.controls.email.invalid">
+              <input formControlName="email" type="email" class="form-control" placeholder="邮箱">
+              <span class="fa fa-envelope form-control-feedback"></span>
+              <lte-form-tooltip *ngIf="form.controls.email.touched && form.controls.email.hasError('required')">
+                邮箱不能为空
+              </lte-form-tooltip>
+              <lte-form-tooltip *ngIf="form.controls.email.touched && form.controls.email.hasError('email')">
+                请输入正确的邮箱
+              </lte-form-tooltip>
+            </div>
+            <div class="form-group has-feedback"
+                 [class.has-error]="form.controls.password.touched && form.controls.password.invalid">
+              <input maxlength="12" minlength="6" type="password" formControlName="password"
+                     class="form-control" placeholder="密码：英文和数字组成，6-12位">
+              <span class="fa fa-lock form-control-feedback"></span>
+              <lte-form-tooltip *ngIf="form.controls.password.touched && form.controls.password.hasError('required')">
+                密码不能为空
+              </lte-form-tooltip>
+              <lte-form-tooltip
+                *ngIf="form.controls.password.touched && form.controls.password.hasError('formatValid')">
+                密码只能由字母数字组成
+              </lte-form-tooltip>
+              <lte-form-tooltip *ngIf="form.controls.password.touched && form.controls.password.hasError('minlength')">
+                密码至少为6位
+              </lte-form-tooltip>
+            </div>
+            <div class="form-group has-feedback"
+                 [class.has-error]="form.controls.repassword.touched && form.controls.repassword.invalid
+                  || form.controls.repassword.touched && !repasswordValid()">
+              <input type="password" formControlName="repassword" class="form-control" placeholder="再次输入密码">
+              <span class="fa fa-lock form-control-feedback"></span>
+              <lte-form-tooltip
+                *ngIf="form.controls.repassword.touched && form.controls.repassword.hasError('required')">
+                请再次输入密码
+              </lte-form-tooltip>
+              <lte-form-tooltip
+                *ngIf="form.controls.repassword.touched && !repasswordValid()">
+                两次密码不一致
+              </lte-form-tooltip>
+            </div>
+            <div class="form-group has-feedback">
+              <div >
+                <label >
+                  <input type="checkbox"> 我同意 <a href="#">注册协议</a>
+                </label>
+                <button [disabled]="form.invalid" (click)="register($event)"
+                        type="submit" class="btn btn-primary pull-right btn-block">注册</button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

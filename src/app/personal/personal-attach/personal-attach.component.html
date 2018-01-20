@@ -1,0 +1,24 @@
+<lte-box [noHeader]="true" type="primary">
+      <dl class="dl-horizontal">
+        <dt>账号：</dt>
+        <dd>{{user?.account}}</dd>
+        <dt>昵称：</dt>
+        <dd>{{user?.username}}</dd>
+        <dt>头像：</dt>
+        <dd>
+          <img class="img-circle" [src]="user?.img | imgUrl" alt="用户头像">
+          <button (click)="goToChangeAvatar()" class="btn btn-xs btn-primary changeImg">修改头像</button>
+        </dd>
+        <dt>邮箱：</dt>
+        <dd>{{user?.email}}</dd>
+        <dt>电话：</dt>
+        <dd>{{user?.phone}}</dd>
+        <dt>性别：</dt>
+        <dd>{{user?.sex === 'MAN' ? '男':'女'}}</dd>
+        <dt>部门：</dt>
+        <dd>{{user?.department}}</dd>
+        <dd>
+          <button (click)="goToModify(user)" class="btn">修改资料</button>
+        </dd>
+      </dl>
+</lte-box>

@@ -1,0 +1,35 @@
+<lte-box [noHeader]="true">
+  <div class="col-md-4">
+    <div class="info-box">
+      <span class="info-box-icon bg-aqua"><i class="fa fa-book"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">已发布文章</span>
+        <span class="info-box-number">{{dashboardInfo?.articleCount}}</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="info-box">
+      <span class="info-box-icon bg-red"><i class="fa fa-comment"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">评论数</span>
+        <span class="info-box-number">{{dashboardInfo?.commentCount }}</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="info-box">
+      <span class="info-box-icon bg-green"><i class="fa fa-user"></i></span>
+
+      <div class="info-box-content">
+        <span class="info-box-text">登陆次数</span>
+        <span class="info-box-number">{{dashboardInfo?.loginCount }}</span>
+      </div>
+      <!-- /.info-box-content -->
+    </div>
+  </div>
+</lte-box>

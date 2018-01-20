@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-md-12 col-xs-12">
+    <lte-box title="博客管理" type="primary">
+      <div (mouseleave)="onListItemMouseout()"
+           (mouseenter)="onListItemMouseenter(article?.id)" *ngFor="let article of pager?.content"
+           class="article-list-item">
+        <div class="list-item-title">
+          <p class="article-list-item-text">
+            <a (click)="goToDetail(article?.id)" class="list-item-title-a">{{article?.title}}</a>
+          </p>
+        </div>
+        <div class="article-list-item-info">
+          <div class="item-info-left">
+            <span>{{article?.nature | naturePipe}}</span>
+            <span>{{article?.createTime | date:'yyyy年MM月dd日 HH:mm:ss'}}</span>
+            <span>{{article?.status | articleStatusPipe}}</span>
+            <span><i class="fa fa-eye"></i> {{article?.viewCount || 0}}</span>
+            <span><i class="fa fa-comment"></i> {{article?.commentCount || 0}}</span>
+          </div>
+          <div *ngIf="showOper(article?.id)" class="item-info-oper">
+            <span (click)="changeCanComment(article)">
+              {{article?.canComment === 1 ? '禁止' : '允许'}}评论
+            </span>
+            <span (click)="topArticle(article)">
+              置顶
+            </span>
+            <span (click)="modifyArticle(article)">编辑</span>
+            <span (click)="deleteArticle(article)">{{article?.status === 'DELETED' ? '彻底删除':'删除' }}</span>
+          </div>
+        </div>
+      </div>
+      <br>
+      <lte-pagination cssClass="no-margin pull-right"
+                      [total]="pager?.totalElements" [pageSize]="pager?.size" [(pageIndex)]="pager.number"
+                      (pageIndexChange)="pageChange($event)" [maxItems]="10"
+                      firstLink="首页" lastLink="尾页" preLink="前一页" nextLink="下一页">
+      </lte-pagination>
+    </lte-box>
+  </div>
+</div>

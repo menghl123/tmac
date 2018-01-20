@@ -1,0 +1,18 @@
+<lte-box title="Tmac 技术博客">
+  <ng-container *ngIf="!isLogged">
+    <p>您还未登录！</p>
+    <a routerLink="/login">登录</a>
+  </ng-container>
+  <ng-container *ngIf="isLogged">
+    <div class="row">
+      <div class="col-md-4">
+        <img [src]="user?.img | imgUrl">
+      </div>
+      <div class="col-md-8">
+        <p>用户名：{{user?.username}}</p>
+        <p>email：{{user?.email}}</p>
+        <p><a routerLink="/personal">前往个人中心</a></p>
+      </div>
+    </div>
+  </ng-container>
+</lte-box>

@@ -1,0 +1,28 @@
+<app-layout>
+  <div class="row">
+    <div class="col-md-3">
+      <lte-box [noHeader]="true" type="primary">
+        <div class="box box-widget widget-user-2">
+          <!-- Add the bg color to the header using any of the bg-* classes -->
+          <div class="widget-user-header bg-primary">
+            <div class="widget-user-image">
+              <img class="img-circle" [src]="user?.img | imgUrl" alt="用户头像">
+            </div>
+            <!-- /.widget-user-image -->
+            <h3 class="widget-user-username">{{user?.username}}</h3>
+            <h5 class="widget-user-desc">{{user?.email}}</h5>
+          </div>
+          <div class="box-footer no-padding">
+            <ul class="nav nav-stacked">
+              <li><a routerLink="/personal/dashboard">图表盘 <span class="pull-right badge bg-aqua">3</span></a></li>
+              <li><a routerLink="/personal/attach">个人资料 <span class="pull-right badge bg-blue">{{completeDegree}}%</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </lte-box>
+    </div>
+    <div class="col-md-9">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</app-layout>

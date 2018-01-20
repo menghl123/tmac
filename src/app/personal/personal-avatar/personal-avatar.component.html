@@ -1,0 +1,31 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="cancel()">
+    <span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title">设置头像</h4>
+</div>
+<div class="modal-body">
+  <div class="row">
+    <div class="col-md-3">
+      <span>当前头像：</span>
+      <img class="now_avatar" *ngIf="selectUrl" [src]="selectUrl | imgUrl" alt="当前头像">
+    </div>
+    <div class="col-md-3">
+      <p>自定义图片上传</p>
+      <div (click)="chooseImg()" class="el-upload el-upload--text">
+        <i class="fa fa-plus avatar-plus"></i>
+        <input #fileChoose (change)="importImg()" class="el-upload__input" name="file" type="file" accept="undefined">
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div (click)="selectImg(data)" *ngFor="let data of headImgData" class="col-md-2 avatar-selector"
+    [class.active]="data === selectUrl">
+      <img  [src]="data | imgUrl">
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="ok()">确认</button>
+  <button type="button" class="btn btn-warning" (click)="cancel()">取消</button>
+</div>

@@ -1,0 +1,113 @@
+.detail-top {
+  padding: 0 29px;
+  color: #2c3033;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+.article_bar {
+  padding: 0 29px 8px;
+  color: #888;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 14px;
+  line-height: 38px;
+  margin-top: 5px;
+}
+
+.article-tag {
+  float: left;
+  display: inline-block;
+}
+
+.original {
+  border: 1px solid #e4ebf4;
+  padding: 2px 6px;
+  font-size: 14px;
+  color: #78909c;
+  margin-right: 20px;
+}
+
+.time {
+  display: inline-block;
+  color: #bbb;
+  font-size: 14px;
+}
+
+.right-bar {
+  float: right;
+  margin-top: 5px;
+}
+.article-body{
+  padding: 10px;
+}
+.original{
+  cursor: pointer;
+}
+.original:hover{
+  color: #3c8dbc;
+}
+
+ul.com-r li {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+ul.com-r li.mid {
+  font-size: 14px;
+  color: #434343;
+}
+
+ul.com-r li.bot {
+  font-size: 14px;
+  color: #434343;
+}
+
+ul.com-r li.top h4 {
+  font-weight: 700;
+  color: #4f4f4f;
+  float: left;
+  font-size: 14px;
+  margin-top: 2px;
+  margin-right: 15px;
+}
+
+ dd ul.com-r li.top .time {
+  display: block;
+  float: left;
+  color: #ccc;
+  font-size: 14px;
+}
+
+ul.com-r li.top .floor-num {
+  float: right;
+  color: #ccc;
+  font-size: 14px;
+}
+
+ul.com-r li.mid .comment-p {
+  display: block;
+}
+.comment-avatar{
+  max-width: 30px;
+
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  position: relative;
+  left: 10%;
+}
+
+.comment-box{
+  display: block;
+  border-top: 1px solid #ccc;
+}
+
+.show-reply-button{
+  cursor: pointer;
+}
+.reply-button{
+  margin-top: 35px;
+}
+
+
