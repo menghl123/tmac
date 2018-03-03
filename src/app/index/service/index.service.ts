@@ -13,7 +13,7 @@ export class IndexService {
       .get('index/articles',
         {
           params:
-            {page: index, size: size}
+            {page: index, size: size, type: ''}
         });
   }
 

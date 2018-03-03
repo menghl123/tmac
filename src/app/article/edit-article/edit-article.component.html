@@ -28,8 +28,9 @@
         <label for="type" class="col-sm-2 control-label">分类：</label>
           <div class="col-sm-3">
             <select  class="form-control" formControlName="type" name="type" id="type">
-              <option value="01111">科技</option>
-              <option value="02222">生活</option>
+              <option value="Java">Java</option>
+              <option value="Angular">Angular</option>
+              <option value="Mysql">Mysql</option>
             </select>
             <lte-form-tooltip *ngIf="form.controls.type.touched && form.controls.type.invalid">
               分类不能为空！
