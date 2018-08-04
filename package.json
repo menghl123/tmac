@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:dev": "ng serve -e=dev -p=4201"
+    "start:dev": "ng serve -e=dev -p=4201 -o"
   },
   "private": true,
   "dependencies": {

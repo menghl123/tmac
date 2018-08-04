@@ -1,0 +1,9 @@
+<lte-box [noHeader]="true" type="primary">
+  <div class="col-md-3">
+    <p>上传word，进行预览</p>
+    <div (click)="chooseWord()" class="el-upload el-upload--text">
+      <i class="fa fa-plus avatar-plus"></i>
+      <input #fileChoose (change)="importImg()" class="el-upload__input" name="file" type="file" accept="undefined">
+    </div>
+  </div>
+</lte-box>

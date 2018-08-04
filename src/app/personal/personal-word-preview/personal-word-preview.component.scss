@@ -1,0 +1,41 @@
+.avatar-selector{
+  padding: 2px;
+  border: 1px solid rgb(221, 221, 221);
+  text-align: center;
+  cursor: pointer;
+  img{
+    width: 70px;
+    height: 70px;
+  }
+}
+.avatar-selector.active{
+  border: 1px solid #337ab7;
+}
+.avatar-uploader .el-upload {
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.el-upload {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  outline: 0;
+}
+.avatar-plus {
+  border: 1px solid rgb(221, 221, 221);
+  font-size: 28px;
+  color: #8c939d;
+  width: 128px;
+  height: 128px;
+  line-height: 128px;
+  text-align: center;
+}
+.el-upload__input {
+  display: none;
+}
+
+.now_avatar{
+  width: 140px;
+}

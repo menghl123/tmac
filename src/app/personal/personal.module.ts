@@ -8,6 +8,10 @@ import {PersonalAvatarComponent} from './personal-avatar/personal-avatar.compone
 import {PersonalAttachComponent} from './personal-attach/personal-attach.component';
 import {PersonalService} from './service/personal.service';
 import { PersonalModifyComponent } from './personal-modify/personal-modify.component';
+import { PersonalWordPreviewComponent } from './personal-word-preview/personal-word-preview.component';
+import { PersonalWordPreviewModalComponent } from './personal-word-preview-modal/personal-word-preview-modal.component';
+import { PersonalExcelPreviewComponent } from './personal-excel-preview/personal-excel-preview.component';
+import { PersonalExcelPreviewModalComponent } from './personal-excel-preview-modal/personal-excel-preview-modal.component';
 
 @NgModule({
   imports: [
@@ -19,11 +23,17 @@ import { PersonalModifyComponent } from './personal-modify/personal-modify.compo
     PersonalDashboardComponent,
     PersonalAvatarComponent,
     PersonalAttachComponent,
-    PersonalModifyComponent
+    PersonalModifyComponent,
+    PersonalWordPreviewComponent,
+    PersonalWordPreviewModalComponent,
+    PersonalExcelPreviewComponent,
+    PersonalExcelPreviewModalComponent
   ],
   entryComponents: [
     PersonalAvatarComponent,
-    PersonalModifyComponent
+    PersonalModifyComponent,
+    PersonalWordPreviewModalComponent,
+    PersonalExcelPreviewModalComponent
   ],
   providers: [
     PersonalService
